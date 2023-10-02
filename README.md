@@ -1,39 +1,73 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# api_services
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+ApiServices for making HTTP requests using the Dio package in a Flutter application. It supports various HTTP methods (GET, POST, PUT, DELETE) and provides flexibility for passing data, query parameters, authentication tokens, and progress callbacks. The class encapsulates the request logic and handles errors, including debugging through debugPrint. This code promotes code reusability and maintainability when interacting with APIs in a Flutter app.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- HTTP Request Handling: The class facilitates making HTTP requests (GET, POST, PUT, DELETE) to remote APIs using the Dio package.
+- Flexibility: It allows sending data, query parameters, and an optional authentication token with each request.
+- Progress Tracking: Supports tracking the progress of data upload and download with onSendProgress and onReceiveProgress callbacks.
+- Error Handling: Catches and handles errors during the request process and provides debugging information using debugPrint.
+- Reusable Code: Encapsulates HTTP request logic into a single class, promoting code reusability and maintainability in a Flutter application.
+- Header Management: Automatically sets the 'Content-Type' header to 'application/json' and adds an 'Authorization' header if an authentication token is provided.
+- Cancelation Support: Allows canceling ongoing requests using the provided cancelToken.
+- Versatility: Supports various HTTP methods, making it suitable for different API interactions.
+
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+To use this package, add api_services as a dependency in your pubspec.yaml file.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Super simple to use:
 
 ```dart
-const like = 'sample';
+   ApiServices()
+    .request(
+        ApiService.GET,
+        "https://jsonplaceholder.typicode.com/users",
+    )
+    .then((response) {
+        debugPrint("Response Data: ${response.data}");
+        debugPrint("NewToken Data: ${ApiUtils.authToken}");
+    })
+    .catchError((error) {
+        debugPrint("Error: $error");
+    });
+```
+## Examples
+
+Performing a `GET` request:
+
+```dart
+import 'package:api_services/api_services.dart';
+
+ApiServices()
+    .request(
+        ApiService.GET,
+        "https://jsonplaceholder.typicode.com/users",
+    )
+    .then((response) {
+        debugPrint("Response Data: ${response.data}");
+    })
+    .catchError((error) {
+        debugPrint("Error: $error");
+    });
 ```
 
-## Additional information
+Performing a `POST` request:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+ApiServices()
+    .request(ApiService.POST, Utils.loginAPI,
+        data: Utils.loginBodyData)
+    .then((response) {
+        debugPrint("Response Data: ${response.data}");
+        debugPrint("NewToken Data: ${ApiUtils.authToken}");
+    }).catchError((error) {
+        debugPrint("Error: $error");
+    });
+```
+
