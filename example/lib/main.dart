@@ -1,6 +1,5 @@
+import 'package:api_service_helper/api_service_helper.dart';
 import 'package:flutter/material.dart';
-
-import 'home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,4 +22,28 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Example"),
+      ),
+      body: ElevatedButton(
+        onPressed: () {
+          ApiServices()
+              .request(
+                  ApiService.GET, "https://jsonplaceholder.typicode.com/users")
+              .then((response) {
+            debugPrint("Response Data: ${response.data}");
+          }).catchError((error) {
+            debugPrint("Error: $error");
+          });
+        },
+        child: const Text("GET"),
+      ),
+    );
+  }
+}

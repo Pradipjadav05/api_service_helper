@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=D:\src\flutter_sdk_3.10.6"
-export "FLUTTER_APPLICATION_PATH=D:\Pradip Jadav\Training\Flutter Projects\Packages\api_services"
+export "FLUTTER_APPLICATION_PATH=D:\Pradip Jadav\Training\Flutter Projects\Packages\api_service_helper"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=0.0.1"

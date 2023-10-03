@@ -1,4 +1,4 @@
-# api_services
+# api_service_helper
 
 ApiServices for making HTTP requests using the Dio package in a Flutter application. It supports various HTTP methods (GET, POST, PUT, DELETE) and provides flexibility for passing data, query parameters, authentication tokens, and progress callbacks. The class encapsulates the request logic and handles errors, including debugging through debugPrint. This code promotes code reusability and maintainability when interacting with APIs in a Flutter app.
 
@@ -17,7 +17,7 @@ ApiServices for making HTTP requests using the Dio package in a Flutter applicat
 
 ## Getting started
 
-To use this package, add api_services as a dependency in your pubspec.yaml file.
+To use this package, add api_service_helper as a dependency in your pubspec.yaml file.
 
 ## Usage
 
@@ -42,7 +42,7 @@ Super simple to use:
 Performing a `GET` request:
 
 ```dart
-import 'package:api_services/api_services.dart';
+import 'package:api_service_helper/api_service_helper.dart';
 
 ApiServices()
     .request(

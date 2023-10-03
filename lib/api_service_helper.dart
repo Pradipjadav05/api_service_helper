@@ -1,4 +1,4 @@
-library api_services;
+library api_service_helper;
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
