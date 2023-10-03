@@ -6,3 +6,7 @@
 ## 0.0.2
 
 * TODO: Example added.
+
+## 0.0.3
+
+* TODO: pub issue fixed
