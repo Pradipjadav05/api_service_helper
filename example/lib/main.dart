@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple), // Create a color scheme with a seed color.
+        useMaterial3: true, // Enable Material 3 theme.
       ),
       home:
           const HomeScreen(), // Display the HomeScreen as the root of the app.

@@ -14,3 +14,7 @@
 ## 0.0.4
 
 * TODO: Optimized and add comments
+
+## 0.0.5
+
+* TODO: Change Example

@@ -22,37 +22,27 @@ To use this package, add api_service_helper as a dependency in your pubspec.yaml
 ## Usage
 
 Super simple to use:
+- Import the API service helper package.
 
 ```dart
-   ApiServices()
-    .request(
-        ApiService.GET,
-        "https://jsonplaceholder.typicode.com/users",
-    )
-    .then((response) {
-        debugPrint("Response Data: ${response.data}");
-        debugPrint("NewToken Data: ${ApiUtils.authToken}");
-    })
-    .catchError((error) {
-        debugPrint("Error: $error");
-    });
+    import 'package:api_service_helper/api_service_helper.dart';
+```
+
+- Initialize an instance of ApiServices with a base URL.
+
+```dart
+    ApiServices myServices = ApiServices(baseUrl: "https://jsonplaceholder.typicode.com");
 ```
 ## Examples
 
 Performing a `GET` request:
 
 ```dart
-import 'package:api_service_helper/api_service_helper.dart';
-
-ApiServices()
-    .request(
-        ApiService.GET,
-        "https://jsonplaceholder.typicode.com/users",
-    )
-    .then((response) {
+    // Make a GET request to "/users" and handle the response.
+    myServices.request(
+        HttpMethod.get, "/users").then((response) {
         debugPrint("Response Data: ${response.data}");
-    })
-    .catchError((error) {
+        }).catchError((error) {
         debugPrint("Error: $error");
     });
 ```
@@ -60,13 +50,10 @@ ApiServices()
 Performing a `POST` request:
 
 ```dart
-ApiServices()
-    .request(ApiService.POST, Utils.loginAPI,
-        data: Utils.loginBodyData)
-    .then((response) {
+    myServices.request(
+        HttpMethod.post, "/users/post", data: data).then((response) {
         debugPrint("Response Data: ${response.data}");
-        debugPrint("NewToken Data: ${ApiUtils.authToken}");
-    }).catchError((error) {
+        }).catchError((error) {
         debugPrint("Error: $error");
     });
 ```
