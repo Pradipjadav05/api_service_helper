@@ -1,6 +1,6 @@
 name: api_service_helper
 description: ApiServices in Flutter uses Dio for HTTP requests, supporting GET, POST, PUT, and DELETE methods with data, authentication, and progress tracking.
-version: 0.0.5
+version: 0.1.1
 homepage: https://github.com/Pradipjadav05/api_service_helper.git
 
 environment:

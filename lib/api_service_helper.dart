@@ -46,7 +46,7 @@ class ApiServices {
 
       // Perform the request based on the specified HTTP method.
       switch (method) {
-      // Perform a GET request using Dio with provided parameters.
+        // Perform a GET request using Dio with provided parameters.
         case HttpMethod.get:
           response = await _dio.get(
             apiUrl,
@@ -58,7 +58,7 @@ class ApiServices {
           );
           break;
         case HttpMethod.post:
-        // Perform a POST request using Dio with provided parameters.
+          // Perform a POST request using Dio with provided parameters.
           response = await _dio.post(
             apiUrl,
             data: data,
@@ -69,7 +69,7 @@ class ApiServices {
           );
           break;
         case HttpMethod.put:
-        // Perform a PUT request using Dio with provided parameters.
+          // Perform a PUT request using Dio with provided parameters.
           response = await _dio.put(
             apiUrl,
             data: data,
@@ -81,7 +81,7 @@ class ApiServices {
           );
           break;
         case HttpMethod.delete:
-        // Perform a DELETE request using Dio with provided parameters.
+          // Perform a DELETE request using Dio with provided parameters.
           response = await _dio.delete(
             apiUrl,
             data: data,

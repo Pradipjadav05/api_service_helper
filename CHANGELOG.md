@@ -18,3 +18,7 @@
 ## 0.0.5
 
 * TODO: Change Example
+
+## 0.1.1
+
+* TODO: pub issue fixed
