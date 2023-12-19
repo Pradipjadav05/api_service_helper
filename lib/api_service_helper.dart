@@ -1,3 +1,8 @@
+/// This class provides a set of utility methods for making HTTP requests using Dio.
+///
+/// The [ApiServices] class is designed to handle common HTTP methods (get, post, put, delete)
+/// with various options such as data, query parameters, authentication, and progress tracking.
+
 import 'package:dio/dio.dart';
 
 // Enumeration to represent HTTP request methods.
@@ -24,7 +29,21 @@ class ApiServices {
     );
   }
 
-  // Method for making HTTP requests with various options.
+  /*
+  * Makes an HTTP request with various options.
+  *
+  * The [method] parameter specifies the HTTP method (get, post, put, delete).
+  * The [url] parameter is the relative URL for the specific API endpoint.
+  * The [data] parameter contains the request payload for methods like POST and PUT.
+  * The [queryParameters] parameter contains additional query parameters for the request.
+  * The [authToken] parameter is an optional authentication token for securing requests.
+  * The [options] parameter allows for customization of request options.
+  * The [cancelToken] parameter is used to cancel an ongoing request.
+  * The [onSendProgress] and [onReceiveProgress] parameters are callbacks for tracking progress.
+  *
+  * Throws a [DioError] if the request fails.
+  * */
+
   Future<Response> request(
     HttpMethod method,
     String url, {
