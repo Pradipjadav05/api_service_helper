@@ -22,3 +22,11 @@
 ## 0.1.1
 
 * TODO: pub issue fixed
+
+## 0.1.2
+
+* TODO: add documentation comments
+
+## 1.0.0
+
+* TODO: pub issue fixed

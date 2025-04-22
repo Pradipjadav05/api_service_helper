@@ -2,6 +2,7 @@
 ///
 /// The [ApiServices] class is designed to handle common HTTP methods (get, post, put, delete)
 /// with various options such as data, query parameters, authentication, and progress tracking.
+library api_service_helper;
 
 import 'package:dio/dio.dart';
 
@@ -109,8 +110,6 @@ class ApiServices {
             cancelToken: cancelToken,
           );
           break;
-        default:
-          throw Exception("Invalid HttpMethod");
       }
 
       return response;
